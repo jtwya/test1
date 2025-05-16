@@ -33,13 +33,13 @@ def callback():
     except InvalidSignatureError:
         abort(400)
     return 'OK'
-
+'''
 import google.generativeai as genai
 genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
 def ask_gemini(question):
   response = model.generate_content(question)
   return response.text
-
+'''
 
 @line_handler.add(MessageEvent, message=TextMessageContent)
 def handle_message(event):
