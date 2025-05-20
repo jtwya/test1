@@ -44,29 +44,9 @@ def handle_message(event):
         line_bot_api = MessagingApi(api_client)
 
         action = event.message.text
-        print(f"Action: {action}") # 加入這行
+        print(f"Action: {action}")
         if action == 'strange food':
-        print("Action is 'strange food'")
-        reply = TextMessage(text="收到 strange food 訊息！") # 暫時替換成簡單文字訊息
-        line_bot_api.reply_message(
-            ReplyMessageRequest(
-                reply_token=event.reply_token,
-                messages=[reply]
-            )
-        )
-    else:
-        print("Action is not 'strange food'")
-        reply = TextMessage(text="Thanks")
-        line_bot_api.reply_message(
-            ReplyMessageRequest(
-                reply_token=event.reply_token,
-                messages=[reply]
-            )
-        )
-'''
-        if action == 'strange food':
-          print(f"Action: {action}") # 加入這行
-
+          print(f"Action: {action}")
           Carrousel_template = CarouselTemplate(
               columns = [
                   CarouselColumn(
@@ -77,8 +57,9 @@ def handle_message(event):
                           URIAction(label='想知道它長怎樣', uri='https://imgs.gvm.com.tw/upload/gallery/20250424/202112.jpg'),
                           URIAction(label='維基百科', uri='https://en.wikipedia.org/wiki/Gonimbrasia_belina'),
                           MessageAction(label="想知道更多", text="想知道更多有關南非的莫帕尼蠕蟲相關的事!")
-                      ]
-                  ),CarouselColumn(
+                          ]
+                      ),
+                  CarouselColumn(
                       thumbnail_image_url = 'https://stickershop.line-scdn.net/stickershop/v1/product/19786399/LINEStorePC/main.png?v=1',
                       title = '哈卡爾，冰島',
                       text = '發酵鯊魚想嘗試嗎?',
@@ -86,8 +67,9 @@ def handle_message(event):
                           URIAction(label='想知道它長怎樣', uri='https://imgs.gvm.com.tw/upload/gallery/20250424/202121.jpg'),
                           URIAction(label='維基百科', uri='https://zh.wikipedia.org/zh-tw/%E5%93%88%E5%8D%A1%E7%88%BE'),
                           MessageAction(label="想知道更多", text="想知道更多有關冰島的哈卡爾相關的事!")
-                      ]
-                  ),CarouselColumn(
+                          ]
+                      ),
+                  CarouselColumn(
                       thumbnail_image_url = 'https://stickershop.line-scdn.net/stickershop/v1/product/19786399/LINEStorePC/main.png?v=1',
                       title = '卡蘇馬蘇起司，義大利',
                       text = '被活蛆感染的起司你敢吃嗎？',
@@ -95,16 +77,16 @@ def handle_message(event):
                           URIAction(label='想知道它長怎樣', uri='https://imgs.gvm.com.tw/upload/gallery/20250424/202115.jpg'),
                           URIAction(label='維基百科', uri='https://zh.wikipedia.org/zh-tw/%E5%8D%A1%E8%98%87%E9%A6%AC%E8%98%87%E4%B9%B3%E9%85%AA'),
                           MessageAction(label="想知道更多", text="想知道更多有關義大利的卡蘇馬蘇起司相關的事!")
-                      ]
-                  )
-              ]
-          )
+                          ]
+                      )
+                  ]
+              )
           reply = TemplateMessage(
               alt_text="這是輪播視窗",
               template=Carrousel_template
-          )
+              )
         else:
-          print("Action is not 'strange food'") # 加入這行
+          print("Action is not 'strange food'")
           reply = TextMessage(text="Thanks")
           line_bot_api.reply_message(
               ReplyMessageRequest(
@@ -112,7 +94,7 @@ def handle_message(event):
                   messages=[reply]
                   )
               )
-'''
+
 
 
 
