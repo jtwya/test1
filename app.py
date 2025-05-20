@@ -44,7 +44,11 @@ def handle_message(event):
         line_bot_api = MessagingApi(api_client)
 
         action = event.message.text
+        print(f"Action: {action}") # 加入這行
+
         if action == 'strange food':
+          print(f"Action: {action}") # 加入這行
+
           Carrousel_template = CarouselTemplate(
               columns = [
                   CarouselColumn(
@@ -82,6 +86,7 @@ def handle_message(event):
               template=Carrousel_template
           )
         else:
+          print("Action is not 'strange food'") # 加入這行
           reply = TextMessage(text="Thanks")
           line_bot_api.reply_message(
               ReplyMessageRequest(
