@@ -54,9 +54,9 @@ def handle_message(event):
                       title = '莫帕尼蠕蟲，南非',
                       text = '帝王蛾的幼蟲，敢挑戰嗎?',
                       actions = [
-                          URIAction(label='想知道它長怎樣', uri='https://imgs.gvm.com.tw/upload/gallery/20250424/202112.jpg'),
+                          URIAction(label='它長怎樣?', uri='https://imgs.gvm.com.tw/upload/gallery/20250424/202112.jpg'),
                           URIAction(label='維基百科', uri='https://en.wikipedia.org/wiki/Gonimbrasia_belina'),
-                          MessageAction(label="想知道更多", text="想知道更多有關南非的莫帕尼蠕蟲相關的事!")
+                          MessageAction(label="想知道更多", text="想知道有關南非的莫帕尼蠕蟲的事!")
                           ]
                       ),
                   CarouselColumn(
@@ -64,9 +64,9 @@ def handle_message(event):
                       title = '哈卡爾，冰島',
                       text = '發酵鯊魚想嘗試嗎?',
                       actions = [
-                          URIAction(label='想知道它長怎樣', uri='https://imgs.gvm.com.tw/upload/gallery/20250424/202121.jpg'),
+                          URIAction(label='它長怎樣?', uri='https://imgs.gvm.com.tw/upload/gallery/20250424/202121.jpg'),
                           URIAction(label='維基百科', uri='https://zh.wikipedia.org/zh-tw/%E5%93%88%E5%8D%A1%E7%88%BE'),
-                          MessageAction(label="想知道更多", text="想知道更多有關冰島的哈卡爾相關的事!")
+                          MessageAction(label="想知道更多", text="想知道有關冰島的哈卡爾的事!")
                           ]
                       ),
                   CarouselColumn(
@@ -74,9 +74,9 @@ def handle_message(event):
                       title = '卡蘇馬蘇起司，義大利',
                       text = '被活蛆感染的起司你敢吃嗎？',
                       actions = [
-                          URIAction(label='想知道它長怎樣', uri='https://imgs.gvm.com.tw/upload/gallery/20250424/202115.jpg'),
+                          URIAction(label='它長怎樣?', uri='https://imgs.gvm.com.tw/upload/gallery/20250424/202115.jpg'),
                           URIAction(label='維基百科', uri='https://zh.wikipedia.org/zh-tw/%E5%8D%A1%E8%98%87%E9%A6%AC%E8%98%87%E4%B9%B3%E9%85%AA'),
-                          MessageAction(label="想知道更多", text="想知道更多有關義大利的卡蘇馬蘇起司相關的事!")
+                          MessageAction(label="想知道更多", text="想知道有關義大利的卡蘇馬蘇起司的事!")
                           ]
                       )
                   ]
