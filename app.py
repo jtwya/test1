@@ -79,16 +79,16 @@ def handle_message(event):
           )
           reply = TemplateMessage(
               alt_text="這是輪播視窗",
-              template=Carousel_template
+              template=CarouselTemplate
           )
-          else:
-            reply = TextMessage(text="Thanks")
+        else:
+          reply = TextMessage(text="Thanks")
           line_bot_api.reply_message(
-            ReplyMessageRequest(
-                reply_token=event.reply_token,
-                messages=[reply]
-            )
-          )
+              ReplyMessageRequest(
+                  reply_token=event.reply_token,
+                  messages=[reply]
+                  )
+              )
 
 
 
