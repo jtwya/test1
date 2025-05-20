@@ -37,6 +37,12 @@ def callback():
         abort(400)
     return 'OK'
 
+import google.generativeai as genai
+genai.configure(api_key=os.getenv.get('GOOGLE_API_KEY'))
+model = genai.GenerativeModel('gemini-2.0-flash')
+def ask_gemini(question):
+  response = model.generate_content(question)
+  return response.text
 
 @line_handler.add(MessageEvent, message=TextMessageContent)
 def handle_message(event):
@@ -60,7 +66,7 @@ def handle_message(event):
                           ]
                       ),
                   CarouselColumn(
-                      thumbnail_image_url = 'https://stickershop.line-scdn.net/stickershop/v1/product/19786399/LINEStorePC/main.png?v=1',
+                      thumbnail_image_url = 'https://www.niusnews.com/upload/imgs/default/2021SEP_CHOU/0908Emoji/4.jpg',
                       title = '哈卡爾，冰島',
                       text = '發酵鯊魚想嘗試嗎?',
                       actions = [
@@ -70,7 +76,7 @@ def handle_message(event):
                           ]
                       ),
                   CarouselColumn(
-                      thumbnail_image_url = 'https://stickershop.line-scdn.net/stickershop/v1/product/19786399/LINEStorePC/main.png?v=1',
+                      thumbnail_image_url = 'https://cdn2.ettoday.net/images/423/c423263.jpg',
                       title = '卡蘇馬蘇起司，義大利',
                       text = '被活蛆感染的起司你敢吃嗎？',
                       actions = [
@@ -88,6 +94,9 @@ def handle_message(event):
         else:
           print("Action is not 'strange food'")
           reply = TextMessage(text="Thanks")
+          response = ask_gemini(event.message.text)
+          reply = TextMessage(text=response)
+
         line_bot_api.reply_message(
             ReplyMessageRequest(
                 reply_token=event.reply_token,
