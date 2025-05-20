@@ -47,7 +47,7 @@ def handle_message(event):
         if action =='奇怪食物':
           Carrousel_template = CarouselTemplate(
               columns = [
-                  Carrousel_column(
+                  CarrouselColumn(
                       thumbnail_image_url = 'https://stickershop.line-scdn.net/stickershop/v1/product/19786399/LINEStorePC/main.png?v=1',
                       title = '莫帕尼蠕蟲，南非',
                       text = '帝王蛾的幼蟲，敢挑戰嗎?'
@@ -56,7 +56,7 @@ def handle_message(event):
                           URIAction(label='維基百科', uri='https://en.wikipedia.org/wiki/Gonimbrasia_belina'),
                           MessageAction(label="想知道更多", text="想知道更多有關南非的莫帕尼蠕蟲相關的事!")
                       ]
-                  ),Carrousel_column(
+                  ),CarrouselColumn(
                       thumbnail_image_url = 'https://stickershop.line-scdn.net/stickershop/v1/product/19786399/LINEStorePC/main.png?v=1',
                       title = '哈卡爾，冰島',
                       text = '發酵鯊魚想嘗試嗎?'
@@ -65,7 +65,7 @@ def handle_message(event):
                           URIAction(label='維基百科', uri='https://zh.wikipedia.org/zh-tw/%E5%93%88%E5%8D%A1%E7%88%BE'),
                           MessageAction(label="想知道更多", text="想知道更多有關冰島的哈卡爾相關的事!")
                       ]
-                  ),Carrousel_column(
+                  ),CarrouselColumn(
                       thumbnail_image_url = 'https://stickershop.line-scdn.net/stickershop/v1/product/19786399/LINEStorePC/main.png?v=1',
                       title = '卡蘇馬蘇起司，義大利',
                       text = '被活蛆感染的起司你敢吃嗎？'
@@ -79,7 +79,7 @@ def handle_message(event):
           )
           reply = TemplateMessage(
               alt_text="這是輪播視窗",
-              template=carousel_template
+              template=Carousel_template
           )
           else:
             reply = TextMessage(text="Thanks")
