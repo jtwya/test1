@@ -45,7 +45,25 @@ def handle_message(event):
 
         action = event.message.text
         print(f"Action: {action}") # 加入這行
-
+        if action == 'strange food':
+        print("Action is 'strange food'")
+        reply = TextMessage(text="收到 strange food 訊息！") # 暫時替換成簡單文字訊息
+        line_bot_api.reply_message(
+            ReplyMessageRequest(
+                reply_token=event.reply_token,
+                messages=[reply]
+            )
+        )
+    else:
+        print("Action is not 'strange food'")
+        reply = TextMessage(text="Thanks")
+        line_bot_api.reply_message(
+            ReplyMessageRequest(
+                reply_token=event.reply_token,
+                messages=[reply]
+            )
+        )
+'''
         if action == 'strange food':
           print(f"Action: {action}") # 加入這行
 
@@ -94,7 +112,7 @@ def handle_message(event):
                   messages=[reply]
                   )
               )
-
+'''
 
 
 
