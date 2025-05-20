@@ -38,7 +38,7 @@ def callback():
     return 'OK'
 
 import google.generativeai as genai
-genai.configure(api_key=os.getenv.get('GOOGLE_API_KEY'))
+genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
 model = genai.GenerativeModel('gemini-2.0-flash')
 def ask_gemini(question):
   response = model.generate_content(question)
