@@ -44,8 +44,7 @@ def handle_message(event):
         line_bot_api = MessagingApi(api_client)
 
         action = event.message.text
-        if action == '奇怪食物':
-          print(f"Received message text: '{event.message.text}'") # 打印收到的訊息文本
+        if action == 'strange food':
           Carrousel_template = CarouselTemplate(
               columns = [
                   CarouselColumn(
