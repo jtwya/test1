@@ -88,11 +88,11 @@ def handle_message(event):
         else:
           print("Action is not 'strange food'")
           reply = TextMessage(text="Thanks")
-          line_bot_api.reply_message(
-              ReplyMessageRequest(
-                  reply_token=event.reply_token,
-                  messages=[reply]
-                  )
+        line_bot_api.reply_message(
+            ReplyMessageRequest(
+                reply_token=event.reply_token,
+                messages=[reply]
+                )
               )
 
 
